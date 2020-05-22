@@ -14,7 +14,7 @@ class _AppointRequestState extends State<AppointRequest> {
   
 
   Future appointReq() async{
-    String url = "http://192.168.254.40/API/appointReq.php";
+    String url = "https://dentaldb.000webhostapp.com/appointReq.php";
     http.post(url,body: {
       'problem' : problem.text,
       'fee' : fee.text,

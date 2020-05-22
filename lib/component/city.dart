@@ -9,7 +9,7 @@ class CityList extends StatefulWidget {
 }
 
 class _CityListState extends State<CityList> {
-  String url = "http://192.168.254.40/api/city.php";
+  String url = "https://dentaldb.000webhostapp.com/city.php";
   String valCity;
   List<dynamic> dataCity = List();
 

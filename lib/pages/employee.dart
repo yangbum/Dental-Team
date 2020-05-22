@@ -20,7 +20,7 @@ class _EmployeRegisterState extends State<EmployeRegister> {
   TextEditingController password = TextEditingController();
 
   Future signUp() async {
-    String url = "http://192.168.254.40/API/employee.php";
+    String url = "https://dentaldb.000webhostapp.com/employee.php";
     http.post(url, body: {
       'first_name': fname.text,
       'mid_name': mname.text,

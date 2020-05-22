@@ -9,7 +9,7 @@ class Position extends StatefulWidget {
 }
 
 class _PositionState extends State<Position> {
-  String url = "http://192.168.254.40/api/position.php";
+  String url = "https://dentaldb.000webhostapp.com/position.php";
   String valProvince;
   List<dynamic> dataProvince = List();
 
