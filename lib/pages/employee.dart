@@ -1,4 +1,5 @@
 import 'package:dental_home/component/gender.dart';
+import 'package:dental_home/component/position.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -52,7 +53,7 @@ class _EmployeRegisterState extends State<EmployeRegister> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Patient Register Page'),
+        title: Text('Employee Register Page'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -87,6 +88,17 @@ class _EmployeRegisterState extends State<EmployeRegister> {
                       validator: (value) =>
                           value.isEmpty ? 'this field can not be empty' : null,
                     ),
+                    //position
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          'Position',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Position(),
+                      ],
+                    ),
+                    //gender
                     Row(
                       children: <Widget>[
                         Text(

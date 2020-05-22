@@ -3,17 +3,17 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class ProvinceList extends StatefulWidget {
+class Position extends StatefulWidget {
   @override
-  _ProvinceListState createState() => _ProvinceListState();
+  _PositionState createState() => _PositionState();
 }
 
-class _ProvinceListState extends State<ProvinceList> {
-  String url = "http://192.168.254.40/api/province.php";
+class _PositionState extends State<Position> {
+  String url = "http://192.168.254.40/api/position.php";
   String valProvince;
   List<dynamic> dataProvince = List();
 
-  Future getProvince() async {
+  Future getPosition() async {
     final response = await http.get(url); 
     var listData = jsonDecode(response.body); 
     setState(() {
@@ -25,7 +25,7 @@ class _ProvinceListState extends State<ProvinceList> {
   @override
   void initState() {
     super.initState();
-    getProvince();
+    getPosition();
   }
   @override
   Widget build(BuildContext context) {
@@ -35,12 +35,12 @@ class _ProvinceListState extends State<ProvinceList> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             DropdownButton(
-              hint: Text("Select Province"),
+              hint: Text("Select Position"),
               value: valProvince,
               items: dataProvince.map((item) {
                 return DropdownMenuItem(
-                  child: Text(item['province_name']),
-                  value: item['province_name'],
+                  child: Text(item['ps_name']),
+                  value: item['ps_name'],
                 );
               }).toList(),
               onChanged: (value) {
