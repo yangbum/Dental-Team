@@ -13,6 +13,8 @@ class _ServicesState extends State<Services> {
       body:Column(children: <Widget>[
         Text('Teeth Implant'),
         Text('Root Canal Tooth Filling'),
+        Text('Extraction'),
+        Text('Teeth Filling'),
       ],)
     );
   }
