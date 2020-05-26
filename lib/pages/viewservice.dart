@@ -20,15 +20,14 @@ class _ServiceViewState extends State<ServiceView> {
     setState(() {
       data = serviceData;
     });
+    loading= false;
   }
 
   @override
   void initState() { 
     super.initState();
     getService();
-    setState(() {
-      loading = false;
-    });
+   
   }
 
   @override

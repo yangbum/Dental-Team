@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../main.dart';
+
 class Position extends StatefulWidget {
   @override
   _PositionState createState() => _PositionState();
@@ -10,7 +12,7 @@ class Position extends StatefulWidget {
 
 class _PositionState extends State<Position> {
   String url = "https://dentaldb.000webhostapp.com/position.php";
-  String valProvince;
+ 
   List<dynamic> dataProvince = List();
 
   Future getPosition() async {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 
 class Gender extends StatefulWidget {
   @override
@@ -7,7 +9,7 @@ class Gender extends StatefulWidget {
 }
 
 class _GenderState extends State<Gender> {
-  String gender;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

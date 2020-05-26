@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../main.dart';
+
 class ProvinceList extends StatefulWidget {
   @override
   _ProvinceListState createState() => _ProvinceListState();
@@ -10,7 +12,7 @@ class ProvinceList extends StatefulWidget {
 
 class _ProvinceListState extends State<ProvinceList> {
   String url = "https://dentaldb.000webhostapp.com/province.php";
-  String valProvince;
+  
   List<dynamic> dataProvince = List();
 
   Future getProvince() async {

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'patient.dart';
+import 'viewservice.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +14,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Text('data'),
+      body: Column(
+        children: <Widget>[
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceView()));
+            },
+            child: Text("Services"),
+          ),
+
+           RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>PatientRegister()));
+            },
+            child: Text("Patient Form"),
+          )
+        ],
+      ),
     );
   }
 }

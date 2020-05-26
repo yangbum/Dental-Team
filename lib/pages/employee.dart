@@ -3,6 +3,10 @@ import 'package:dental_home/component/position.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../main.dart';
+import '../main.dart';
+import '../main.dart';
+
 
 class EmployeRegister extends StatefulWidget {
   @override
@@ -25,9 +29,9 @@ class _EmployeRegisterState extends State<EmployeRegister> {
       'first_name': fname.text,
       'mid_name': mname.text,
       'last_name': lname.text,
-      // 'gender' : gender.text,
-      // 'dob': dob.text,
-      // 'province' : ProvinceList().valProvince,
+      'gender' : gender,
+      // 'dob': dateTime,
+      // 'province' :valProvince
       // 'city' : CityList().valCity,
       'address': address.text,
       // 'street': street.text,

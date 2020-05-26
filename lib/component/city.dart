@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../main.dart';
+
 class CityList extends StatefulWidget {
   @override
   _CityListState createState() => _CityListState();
@@ -10,7 +12,7 @@ class CityList extends StatefulWidget {
 
 class _CityListState extends State<CityList> {
   String url = "https://dentaldb.000webhostapp.com/city.php";
-  String valCity;
+ 
   List<dynamic> dataCity = List();
 
   Future getCity() async {
