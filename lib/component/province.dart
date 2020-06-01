@@ -12,11 +12,8 @@ class ProvinceList extends StatefulWidget {
 }
 
 class _ProvinceListState extends State<ProvinceList> {
-<<<<<<< HEAD
   String url = "https://dentaldb.000webhostapp.com/API/province.php";
-=======
-  String url = "https://dentaldb.000webhostapp.com/province.php";
->>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
+
   
   List<dynamic> dataProvince = List();
 

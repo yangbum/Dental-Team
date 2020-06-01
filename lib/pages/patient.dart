@@ -5,12 +5,6 @@ import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../main.dart';
-import '../main.dart';
-import '../main.dart';
-import '../main.dart';
-
-
 class PatientRegister extends StatefulWidget {
   @override
   _PatientRegisterState createState() => _PatientRegisterState();
@@ -28,24 +22,15 @@ class _PatientRegisterState extends State<PatientRegister> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
-<<<<<<< HEAD
+
   Future signUp() async {
     String url = "https://dentaldb.000webhostapp.com/API/patient.php";
     http.post(url, body: {
-=======
-  void signUp(){
-    String url = "https://dentaldb.000webhostapp.com/patient.php";
-      http.post(url, body: {
->>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
       'first_name': fname.text,
       'mid_name': mname.text,
       'last_name': lname.text,
       'gender' : gender,
-<<<<<<< HEAD
       // 'dob': dateTime.toString(),
-=======
-      // 'dob': dateTime,
->>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
       'province' : valProvince,
       'city' : valCity,
       'ward': ward.text,
@@ -59,6 +44,7 @@ class _PatientRegisterState extends State<PatientRegister> {
     print(gender);
     print(valCity);
     print(valProvince);
+    
     setState(() {
       fname.clear();
       mname.clear();
@@ -100,12 +86,9 @@ class _PatientRegisterState extends State<PatientRegister> {
                       decoration: InputDecoration(
                         labelText: 'Mid name',
                       ),
-<<<<<<< HEAD
                       // validator: (value) =>
                       //     value.isEmpty ? 'this field can not be empty' : null,
-=======
-                      
->>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
+
                     ),
                     TextFormField(
                       controller: lname,

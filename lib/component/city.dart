@@ -12,13 +12,10 @@ class CityList extends StatefulWidget {
 }
 
 class _CityListState extends State<CityList> {
-<<<<<<< HEAD
+
   String url = "https://dentaldb.000webhostapp.com/API/city.php";
 
-=======
-  String url = "https://dentaldb.000webhostapp.com/city.php";
- 
->>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
+
   List<dynamic> dataCity = List();
 
   Future getCity() async {
