@@ -1,6 +1,8 @@
 import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 
 class Gender extends StatefulWidget {
   @override
@@ -8,7 +10,11 @@ class Gender extends StatefulWidget {
 }
 
 class _GenderState extends State<Gender> {
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
   @override
   Widget build(BuildContext context) {
     return Padding(

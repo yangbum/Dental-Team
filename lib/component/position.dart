@@ -4,14 +4,22 @@ import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../main.dart';
+
 class Position extends StatefulWidget {
   @override
   _PositionState createState() => _PositionState();
 }
 
 class _PositionState extends State<Position> {
+<<<<<<< HEAD
   String url = "https://dentaldb.000webhostapp.com/API/position.php";
   List<dynamic> dataPosition = List();
+=======
+  String url = "https://dentaldb.000webhostapp.com/position.php";
+ 
+  List<dynamic> dataProvince = List();
+>>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
 
   Future getPosition() async {
     final response = await http.get(url); 

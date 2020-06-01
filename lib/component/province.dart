@@ -4,13 +4,19 @@ import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../main.dart';
+
 class ProvinceList extends StatefulWidget {
   @override
   _ProvinceListState createState() => _ProvinceListState();
 }
 
 class _ProvinceListState extends State<ProvinceList> {
+<<<<<<< HEAD
   String url = "https://dentaldb.000webhostapp.com/API/province.php";
+=======
+  String url = "https://dentaldb.000webhostapp.com/province.php";
+>>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
   
   List<dynamic> dataProvince = List();
 

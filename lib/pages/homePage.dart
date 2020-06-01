@@ -2,6 +2,13 @@ import 'package:dental_home/pages/employe_log.dart';
 import 'package:dental_home/pages/patient_log.dart';
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
+=======
+import 'patient.dart';
+import 'viewservice.dart';
+
+
+>>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -12,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+<<<<<<< HEAD
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
@@ -48,6 +56,24 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+=======
+      body: Column(
+        children: <Widget>[
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceView()));
+            },
+            child: Text("Services"),
+          ),
+
+           RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>PatientRegister()));
+            },
+            child: Text("Patient Form"),
+          )
+        ],
+>>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
       ),
     );
   }

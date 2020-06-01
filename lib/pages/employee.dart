@@ -4,6 +4,10 @@ import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../main.dart';
+import '../main.dart';
+import '../main.dart';
+
 
 class EmployeRegister extends StatefulWidget {
   @override
@@ -21,6 +25,7 @@ class _EmployeRegisterState extends State<EmployeRegister> {
   TextEditingController password = TextEditingController();
 
   Future signUp() async {
+<<<<<<< HEAD
     String url = "https://dentaldb.000webhostapp.com/API/employee.php";
     http.post(url, body : {
       'first_name' : fname.text,
@@ -32,6 +37,23 @@ class _EmployeRegisterState extends State<EmployeRegister> {
       'mobile' : mobile.text,
       'email' : email.text,
       'password' : password.text,
+=======
+    String url = "https://dentaldb.000webhostapp.com/employee.php";
+    http.post(url, body: {
+      'first_name': fname.text,
+      'mid_name': mname.text,
+      'last_name': lname.text,
+      'gender' : gender,
+      // 'dob': dateTime,
+      // 'province' :valProvince
+      // 'city' : CityList().valCity,
+      'address': address.text,
+      // 'street': street.text,
+      // 'telephone': telephone.text,
+      'mobile': mobile.text,
+      'email': email.text,
+      'password': password.text
+>>>>>>> fe95dc0948d2f791df914fa88f57346eb40ec254
     });
     setState(() {
       fname.clear();
