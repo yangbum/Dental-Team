@@ -14,14 +14,14 @@ class _EmployeProfileState extends State<EmployeProfile> {
 
    final tabs = [
     Center(child: Text('Appointment Request', style: TextStyle(color: Colors.white, fontSize: 25),),),
-    Center(child: Text('Presciption or Suggestion', style: TextStyle(color: Colors.white, fontSize: 25),),),
     Center(child: Text('Appointment Confirm', style: TextStyle(color: Colors.white,fontSize: 25),),),
+    Center(child: Text('Presciption or Suggestion', style: TextStyle(color: Colors.white, fontSize: 25),),),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: drawer('Presciption'),
+      drawer: drawer(context, 'Presciption'),
       appBar: AppBar(
         title: Center(child: Text('User Profile')),
       ),

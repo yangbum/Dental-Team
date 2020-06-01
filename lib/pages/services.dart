@@ -15,6 +15,7 @@ class _ServicesState extends State<Services> {
         Text('Root Canal Tooth Filling'),
         Text('Extraction'),
         Text('Teeth Filling'),
+        Image.network('https://i.golootlo.pk/properties/9815/barkat-dental-clinic.jpg')
       ],)
     );
   }

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -9,8 +10,8 @@ class CityList extends StatefulWidget {
 }
 
 class _CityListState extends State<CityList> {
-  String url = "https://dentaldb.000webhostapp.com/city.php";
-  String valCity;
+  String url = "https://dentaldb.000webhostapp.com/API/city.php";
+
   List<dynamic> dataCity = List();
 
   Future getCity() async {

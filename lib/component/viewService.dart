@@ -1,23 +1,23 @@
 import 'dart:convert';
 
-import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Position extends StatefulWidget {
+class ServiceView extends StatefulWidget {
   @override
-  _PositionState createState() => _PositionState();
+  _ServiceViewState createState() => _ServiceViewState();
 }
 
-class _PositionState extends State<Position> {
-  String url = "https://dentaldb.000webhostapp.com/API/position.php";
-  List<dynamic> dataPosition = List();
+class _ServiceViewState extends State<ServiceView> {
+  String url = "https://dentaldb.000webhostapp.com/API/viewservice.php";
+  
+  List<dynamic> dataProvince = List();
 
-  Future getPosition() async {
+  Future getProvince() async {
     final response = await http.get(url); 
     var listData = jsonDecode(response.body); 
     setState(() {
-      dataPosition = listData; 
+      dataProvince = listData; 
     });
     // print("data : $listData");
   }
@@ -25,7 +25,7 @@ class _PositionState extends State<Position> {
   @override
   void initState() {
     super.initState();
-    getPosition();
+    getProvince();
   }
   @override
   Widget build(BuildContext context) {
@@ -34,21 +34,17 @@ class _PositionState extends State<Position> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            DropdownButton(
-              hint: Text("Select Position"),
-              value: valPosition,
-              items: dataPosition.map((item) {
-                return DropdownMenuItem(
-                  child: Text(item['ps_name']),
-                  value: item['ps_name'],
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: dataProvince.length,
+              itemBuilder: (context, index){
+                var callData = dataProvince[index];
+                return ListTile(
+                  title: Text(callData['name']),
+                  subtitle: Image.network(callData['photo']),
                 );
-              }).toList(),
-              onChanged: (value) {
-               setState(() {
-                 valPosition = value;
-               });
-              },
-            ),
+              })
             // Text('Province you choose $valProvince',
             // style: TextStyle(
             //       color: Colors.black,

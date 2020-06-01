@@ -1,3 +1,4 @@
+import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 
 
@@ -7,7 +8,7 @@ class Gender extends StatefulWidget {
 }
 
 class _GenderState extends State<Gender> {
-  String gender;
+  
   @override
   Widget build(BuildContext context) {
     return Padding(

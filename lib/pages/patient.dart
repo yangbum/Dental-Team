@@ -1,7 +1,7 @@
 import 'package:dental_home/component/city.dart';
-import 'package:dental_home/component/datePic.dart';
 import 'package:dental_home/component/gender.dart';
 import 'package:dental_home/component/province.dart';
+import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -23,15 +23,15 @@ class _PatientRegisterState extends State<PatientRegister> {
   TextEditingController password = TextEditingController();
 
   Future signUp() async {
-    String url = "https://dentaldb.000webhostapp.com/patient.php";
+    String url = "https://dentaldb.000webhostapp.com/API/patient.php";
     http.post(url, body: {
       'first_name': fname.text,
       'mid_name': mname.text,
       'last_name': lname.text,
-      // 'gender' : gender.text,
-      // 'dob': dob.text,
-      // 'province' : ProvinceList().valProvince,
-      // 'city' : CityList().valCity,
+      'gender' : gender,
+      // 'dob': dateTime.toString(),
+      'province' : valProvince,
+      'city' : valCity,
       'ward': ward.text,
       'street': street.text,
       'telephone': telephone.text,
@@ -80,8 +80,8 @@ class _PatientRegisterState extends State<PatientRegister> {
                       decoration: InputDecoration(
                         labelText: 'Mid name',
                       ),
-                      validator: (value) =>
-                          value.isEmpty ? 'this field can not be empty' : null,
+                      // validator: (value) =>
+                      //     value.isEmpty ? 'this field can not be empty' : null,
                     ),
                     TextFormField(
                       controller: lname,
@@ -100,24 +100,17 @@ class _PatientRegisterState extends State<PatientRegister> {
                         Gender(),
                       ],
                     ),
-                    // TextFormField(
-                    //   controller: dob,
-                    //   decoration: InputDecoration(
-                    //     labelText: 'DOB',
-                    //     hintText: 'Date of Birth'
-                    //   ),
-                    //   validator: (value) => value.isEmpty ? 'this field can not be empty' : null,
+
+                    // Row(
+                    //   children: <Widget>[
+                    //     Text(
+                    //       'Date of Birth',
+                    //       style: TextStyle(fontSize: 20),
+                    //     ),
+                    //     SizedBox(width: 20,),
+                    //     DatePicker(),
+                    //   ],
                     // ),
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          'Date of Birth',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        SizedBox(width: 20,),
-                        DatePicker(),
-                      ],
-                    ),
 
                     Row(
                       children: <Widget>[

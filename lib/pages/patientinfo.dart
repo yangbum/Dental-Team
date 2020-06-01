@@ -18,7 +18,7 @@ class _PatientProfileState extends State<PatientProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: drawer('Appointment Request'),
+      drawer: drawer(context, 'Appointment Request'),
       appBar: AppBar(
         title: Center(child: Text('User Profile')),
       ),
@@ -63,13 +63,14 @@ class _PatientProfileState extends State<PatientProfile> {
             iconData: Icons.add_comment,
             label: 'Request',
           ),
-          FFNavigationBarItem(
-            iconData: Icons.assignment,
-            label: 'Presciption',
-          ),
+          
           FFNavigationBarItem(
             iconData: Icons.beenhere,
             label: 'Confirmation',
+          ),
+          FFNavigationBarItem(
+            iconData: Icons.assignment,
+            label: 'Presciption',
           ),
         ],
       ),

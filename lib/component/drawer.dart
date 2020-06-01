@@ -1,6 +1,7 @@
+import 'package:dental_home/pages/homePage.dart';
 import 'package:flutter/material.dart';
 
-Widget drawer(String text){
+Widget drawer(BuildContext context,String text){
  return Drawer(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 50),
@@ -93,7 +94,9 @@ Widget drawer(String text){
                       Text('Log Out',style: TextStyle(color: Colors.white,fontSize: 20),)
                     ],
                   ),
-                  onPressed: (){}),
+                  onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                  }),
               ),
             ],
           ),

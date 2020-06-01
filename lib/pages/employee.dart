@@ -1,5 +1,6 @@
 import 'package:dental_home/component/gender.dart';
 import 'package:dental_home/component/position.dart';
+import 'package:dental_home/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -20,33 +21,30 @@ class _EmployeRegisterState extends State<EmployeRegister> {
   TextEditingController password = TextEditingController();
 
   Future signUp() async {
-    String url = "https://dentaldb.000webhostapp.com/employee.php";
-    http.post(url, body: {
-      'first_name': fname.text,
-      'mid_name': mname.text,
-      'last_name': lname.text,
-      // 'gender' : gender.text,
-      // 'dob': dob.text,
-      // 'province' : ProvinceList().valProvince,
-      // 'city' : CityList().valCity,
-      'address': address.text,
-      // 'street': street.text,
-      // 'telephone': telephone.text,
-      'mobile': mobile.text,
-      'email': email.text,
-      'password': password.text
+    String url = "https://dentaldb.000webhostapp.com/API/employee.php";
+    http.post(url, body : {
+      'first_name' : fname.text,
+      'mid_name' : mname.text,
+      'last_name' : lname.text,
+      'gender' : gender,
+      'position' : valPosition,
+      'address' : address.text,
+      'mobile' : mobile.text,
+      'email' : email.text,
+      'password' : password.text,
     });
     setState(() {
       fname.clear();
       mname.clear();
       lname.clear();
       address.clear();
-      // street.clear();
-      // telephone.clear();
       mobile.clear();
       email.clear();
       password.clear();
     });
+    print(gender);
+    print(valPosition);
+    print(mobile);
   }
 
   @override
@@ -77,8 +75,6 @@ class _EmployeRegisterState extends State<EmployeRegister> {
                       decoration: InputDecoration(
                         labelText: 'Mid name',
                       ),
-                      validator: (value) =>
-                          value.isEmpty ? 'this field can not be empty' : null,
                     ),
                     TextFormField(
                       controller: lname,
@@ -88,16 +84,7 @@ class _EmployeRegisterState extends State<EmployeRegister> {
                       validator: (value) =>
                           value.isEmpty ? 'this field can not be empty' : null,
                     ),
-                    //position
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          'Position',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Position(),
-                      ],
-                    ),
+                    
                     //gender
                     Row(
                       children: <Widget>[
@@ -108,16 +95,16 @@ class _EmployeRegisterState extends State<EmployeRegister> {
                         Gender(),
                       ],
                     ),
-                    // TextFormField(
-                    //   controller: dob,
-                    //   decoration: InputDecoration(
-                    //     labelText: 'DOB',
-                    //     hintText: 'Date of Birth'
-                    //   ),
-                    //   validator: (value) => value.isEmpty ? 'this field can not be empty' : null,
-                    // ),
-                   
-                   
+                   //position
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          'Position',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Position(),
+                      ],
+                    ),
 
                     TextFormField(
                       controller: address,
